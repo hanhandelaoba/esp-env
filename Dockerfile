@@ -15,6 +15,8 @@ RUN wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a
 ENV PATH="$PATH:/opt/esp/xtensa-esp32-elf/bin"     
 ENV IDF_PATH=/opt/esp/esp-idf MDF_PATH=/opt/esp/esp-mdf 
 
+RUN python2.7 -m pip install --user -r $IDF_PATH/requirements.txt
+
 VOLUME /opt/esp/projects
 WORKDIR /opt/esp/projects
 
